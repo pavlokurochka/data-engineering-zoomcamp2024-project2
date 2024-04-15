@@ -1,3 +1,4 @@
+-- pip install duckdb==v0.9.2
 SELECT
 		description,
 		creator_profile_id,

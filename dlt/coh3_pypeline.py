@@ -1,3 +1,4 @@
+# pip install duckdb==v0.9.2
 # https://coh3stats.com/other/open-data
 # You can get the data here 
 # https://github.com/cohstats/coh3-stats/blob/master/src/coh3/coh3-raw-data.ts
@@ -9,8 +10,6 @@ import datetime  # import datetime, timezone
 import requests
 import yaml
 import dlt
-
-# %%
 
 # %%
 def get_midnight_utc_timestamp(date_in: str):
@@ -62,7 +61,7 @@ def merge_matches (matches_in:list):
     print(info)
 
 # %%
-matches = download_matches('2024-04-08')
+matches = download_matches('2024-04-09')
 merge_matches(matches)
 # %%
 def import_dims():
