@@ -1,2 +1,4 @@
 *.duckdb*
 dlt_sql/*
+.env
+.env_encoded
