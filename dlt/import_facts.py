@@ -78,5 +78,6 @@ parser.add_argument(
 
 args = parser.parse_args()
 match_date = args.match_date[:11]
+print(f'{match_date=}')
 matches = download_matches(args.match_date)
 merge_matches(matches)
