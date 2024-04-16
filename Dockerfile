@@ -26,4 +26,4 @@ ENTRYPOINT ["streamlit", "run", "dashboard.py", "--server.port=8501", "--server.
 # https://docs.streamlit.io/deploy/tutorials/docker
 # docker build -t streamlit .
 
-# docker run -p 8501:8501 streamlit
+# docker run --env-file=.env -p 8501:8501 streamlit
