@@ -23,7 +23,7 @@ def get_midnight_utc_timestamp(date_in: str):
     # Create a UTC datetime object at midnight
     midnight_utc = datetime.datetime(
         year_, month_, day_, 0, 0, 0, tzinfo=datetime.timezone.utc
-    )
+    ) - datetime.timedelta(days=1)
 
     # Convert to timestamp (seconds since Epoch)
     timestamp = midnight_utc.timestamp()
