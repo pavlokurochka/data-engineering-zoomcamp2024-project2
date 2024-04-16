@@ -21,6 +21,9 @@ HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
 
 ENTRYPOINT ["streamlit", "run", "dashboard.py", "--server.port=8501", "--server.address=0.0.0.0"]
 
+# docker system prune
+#  docker rmi streamlit:latest
 # https://docs.streamlit.io/deploy/tutorials/docker
 # docker build -t streamlit .
+
 # docker run -p 8501:8501 streamlit
