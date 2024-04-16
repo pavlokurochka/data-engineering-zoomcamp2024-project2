@@ -16,18 +16,30 @@ con = duckdb.connect(f"md:coh3?motherduck_token={motherduck_token}")
 
 # con = duckdb.connect('md:_share/coh3/03f5c2f6-bc17-4b66-893f-dd009a3d4b59')
 # %%
-df = con.sql("""SELECT epoch_ms(startgametime*1000)::date  start_date,
-   		left(mt.name,3) match_type, mp.name map_name,
+df = con.sql("""WITH by_map_date AS (
+SELECT
+	mp.name map_name,
+	epoch_ms(startgametime * 1000)::date::CHARACTER  start_date,
 		count(1) count_
-	FROM
+FROM
 		coh3.fact.matches mm
-  join coh3.dim.match_types mt on mm.matchtype_id = mt.id
-  left join coh3.dim.maps mp on mm.mapname = mp.id
-  where mt."name"not like '%Ai%'
-  and      mm.description = 'AUTOMATCH'
-		GROUP BY ALL 
-		ORDER BY 1,2 
-        limit 10""").df()
+JOIN coh3.dim.match_types mt ON
+	mm.matchtype_id = mt.id
+LEFT JOIN coh3.dim.maps mp ON
+	mm.mapname = mp.id
+WHERE
+	mt."name" NOT LIKE '%Ai%'
+	AND LEFT(mt.name,
+	3) = '1V1'
+	--	AND epoch_ms(startgametime * 1000)::date = '2024-04-08'
+	AND mm.description = 'AUTOMATCH'
+GROUP BY
+	ALL)
+	PIVOT by_map_date ON
+map_name
+	USING sum(count_)
+ORDER BY
+start_date""").df()
 # %%
 st.markdown("_Maps by Match Type_")
 st.dataframe(df)
