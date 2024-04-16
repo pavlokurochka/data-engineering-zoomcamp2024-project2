@@ -1,10 +1,11 @@
-# pip install duckdb==v0.9.2
+# pip install duckdb==v0.9.2, dlt[motherduck]>=0.3.25
 # https://coh3stats.com/other/open-data
 # You can get the data here 
 # https://github.com/cohstats/coh3-stats/blob/master/src/coh3/coh3-raw-data.ts
 # and here
 # https://github.com/cohstats/coh3-stats/blob/master/src/coh3/coh3-data.ts
 # For the counters you can find more info here https://github.com/cohstats/coh3-stats/issues/194
+# dlt[motherduck]>=0.3.25
 # %%
 import datetime  # import datetime, timezone
 import requests
@@ -65,10 +66,15 @@ matches = download_matches('2024-04-09')
 merge_matches(matches)
 # %%
 def import_dims():
-    yaml_file = "coh3-raw-data.yaml"
-    with open(yaml_file, encoding="utf-8") as f:
-        data = yaml.load(f, Loader=yaml.FullLoader)
-    
+    # yaml_file = "coh3-raw-data.yaml"
+    # with open(yaml_file, encoding="utf-8") as f:
+    #     data = yaml.load(f, Loader=yaml.FullLoader)
+    url = 'https://github.com/pavlokurochka/data-engineering-zoomcamp2024-project2/raw/main/dlt/coh3-raw-data.yaml'
+    response = requests.get(url, timeout=60)
+    response.raise_for_status()
+    response_text = response.text
+    data = yaml.load(response_text, Loader=yaml.FullLoader)
+
     factions = [v for _k,v in data['factions'].items()]
     data['factions'] = factions
     data['match_types'] = data['matchTypes']
@@ -100,15 +106,15 @@ def refresh_dims(data_in:dict):
 dims = import_dims()
 refresh_dims(dims)
 # %%
-
+url = 'https://github.com/pavlokurochka/data-engineering-zoomcamp2024-project2/raw/main/dlt/coh3-raw-data.yaml'
+response = requests.get(url, timeout=60)
+response.raise_for_status()
+response_text = response.text
+data = yaml.load(response_text, Loader=yaml.FullLoader)
 # %%
-# maps = []
-# for m in dims['maps']:
-#     for k,v in m.items():
-#         map_row  = {}
-#         map_row['id'] = k
-#         map_row.update(v)
-#         maps.append(map_row)
-# # %%
-# maps
+data
+# %%
+!pwd
+# %%
+!ls .dlt
 # %%
