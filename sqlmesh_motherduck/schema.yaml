@@ -1,0 +1,88 @@
+- name: '"coh3"."dim"."factions"'
+  columns:
+    id: BIGINT
+    name: TEXT
+    _dlt_load_id: TEXT
+    _dlt_id: TEXT
+- name: '"coh3"."dim"."maps"'
+  columns:
+    id: TEXT
+    name: TEXT
+    url: TEXT
+    automatch: BOOLEAN
+    _dlt_load_id: TEXT
+    _dlt_id: TEXT
+- name: '"coh3"."dim"."match_types"'
+  columns:
+    id: BIGINT
+    name: TEXT
+    _dlt_load_id: TEXT
+    _dlt_id: TEXT
+    localized_name: TEXT
+- name: '"coh3"."dim"."races"'
+  columns:
+    id: BIGINT
+    name: TEXT
+    faction_id: BIGINT
+    localized_name: TEXT
+    _dlt_load_id: TEXT
+    _dlt_id: TEXT
+- name: '"coh3"."fact"."matches"'
+  columns:
+    id: BIGINT
+    description: TEXT
+    creator_profile_id: BIGINT
+    mapname: TEXT
+    expire_at___seconds: BIGINT
+    expire_at___nanoseconds: BIGINT
+    platform: TEXT
+    completiontime: BIGINT
+    matchtype_id: BIGINT
+    startgametime: BIGINT
+    maxplayers: BIGINT
+    _dlt_load_id: TEXT
+    _dlt_id: TEXT
+- name: '"coh3"."fact"."matches__matchhistoryitems"'
+  columns:
+    profile_id: BIGINT
+    itemlocation_id: BIGINT
+    itemdefinition_id: BIGINT
+    _dlt_root_id: TEXT
+    _dlt_parent_id: TEXT
+    _dlt_list_idx: BIGINT
+    _dlt_id: TEXT
+- name: '"coh3"."fact"."matches__matchhistoryreportresults"'
+  columns:
+    matchhistorymember__wins: BIGINT
+    matchhistorymember__reporttype: BIGINT
+    matchhistorymember__newrating: BIGINT
+    matchhistorymember__streak: BIGINT
+    matchhistorymember__oldrating: BIGINT
+    matchhistorymember__losses: BIGINT
+    matchhistorymember__statgroup_id: BIGINT
+    matchhistorymember__arbitration: BIGINT
+    matchhistorymember__outcome: BIGINT
+    counters: TEXT
+    profile_id: BIGINT
+    teamid: BIGINT
+    race_id: BIGINT
+    profile__country: TEXT
+    profile__level: BIGINT
+    profile__profile_id: BIGINT
+    profile__personal_statgroup_id: BIGINT
+    profile__leaderboardregion_id: BIGINT
+    profile__name: TEXT
+    profile__xp: BIGINT
+    profile__alias: TEXT
+    resulttype: BIGINT
+    _dlt_root_id: TEXT
+    _dlt_parent_id: TEXT
+    _dlt_list_idx: BIGINT
+    _dlt_id: TEXT
+- name: '"coh3"."fact"."matches__profile_ids"'
+  columns:
+    value: BIGINT
+    _dlt_id: TEXT
+    _dlt_parent_id: TEXT
+    _dlt_list_idx: BIGINT
+    _dlt_root_id: TEXT

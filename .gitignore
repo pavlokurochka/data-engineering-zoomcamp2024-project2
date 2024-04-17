@@ -2,3 +2,6 @@
 dlt_sql/*
 .env
 .env_encoded
+sqlmesh_motherduck/.cache/*
+sqlmesh_motherduck/logs/*
+sqlmesh_motherduck/macros/__pycache__/*
