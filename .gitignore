@@ -5,3 +5,4 @@ dlt_sql/*
 sqlmesh_motherduck/.cache/*
 sqlmesh_motherduck/logs/*
 sqlmesh_motherduck/macros/__pycache__/*
+sqlmesh_motherduck/config.yaml
