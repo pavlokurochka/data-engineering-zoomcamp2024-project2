@@ -1,0 +1,15 @@
+gateways:
+    mother_duck:
+        connection:
+            type: motherduck
+            database: coh3
+            token: <motherduck_token>
+        state_connection:
+            type: duckdb
+            database: db.db
+
+default_gateway: mother_duck
+
+model_defaults:
+    dialect: duckdb
+# 
