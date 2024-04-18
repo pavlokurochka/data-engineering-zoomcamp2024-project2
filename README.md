@@ -73,7 +73,7 @@ Flow **motherduck_facts** transforms fact data data for game matches from [stora
 
 Create and account on [MotherDuck](https://app.motherduck.com/). Go to [settings](https://app.motherduck.com/settings) and copy the Service Token.
 
-Fork this repository to your GitHub account. Click on **Code** and the **Create codespace on main**.
+Fork this repository to your GitHub account. Click on **Code** and then **Create codespace on main**.
 
 ![](pictures/codespace.png)
 
