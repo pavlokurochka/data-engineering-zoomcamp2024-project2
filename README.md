@@ -85,7 +85,7 @@ Select File> Run in VC Code Desktop. Now you have a code editor, terminals and p
 
 In VS Code create `.env` file in the project directory.
 
-![](D:\data-engineering-zoomcamp2024-project2\pictures\env_file.png)
+![](pictures/env_file.png)
 
 Paste following lines into it:
 
