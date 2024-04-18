@@ -140,7 +140,9 @@ Kill all open terminals in VS Code. Stop your codespace in [codespaces](https://
 
 ------
 
-I hope you like it. If you have any questions about the project, face any problems while following along, or have a suggestion for me, feel free to comment or drop me a DM on  [Linkedin](https://www.linkedin.com/in/kurochka/).
+I hope you like it. If you do, maybe a star for the project would be nice 😀.
+
+If you have any questions about the project, face any problems while following along, or have a suggestion for me, feel free to comment or drop me a DM on  [Linkedin](https://www.linkedin.com/in/kurochka/).
 
 ### Special thanks 
 
