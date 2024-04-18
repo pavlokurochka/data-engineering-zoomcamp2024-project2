@@ -3,7 +3,7 @@ MODEL (
   kind FULL
 );
 
-WITH by_date AS (
+-- WITH by_date AS (
 SELECT
 	  match_size, 
 	 startgame_date,
@@ -14,9 +14,10 @@ WHERE
 len(ai_difficulty) =0
 	AND description = 'AUTOMATCH'
 GROUP BY
-	ALL)
-	PIVOT by_date ON
-match_size
-	USING sum(count_)
-ORDER BY
-startgame_date
+	ALL
+-- 	)
+-- 	PIVOT by_date ON
+-- match_size
+-- 	USING sum(count_)
+-- ORDER BY
+-- startgame_date
