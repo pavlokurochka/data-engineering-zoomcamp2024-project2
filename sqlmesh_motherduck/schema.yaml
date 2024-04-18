@@ -79,10 +79,4 @@
     _dlt_parent_id: TEXT
     _dlt_list_idx: BIGINT
     _dlt_id: TEXT
-- name: '"coh3"."fact"."matches__profile_ids"'
-  columns:
-    value: BIGINT
-    _dlt_id: TEXT
-    _dlt_parent_id: TEXT
-    _dlt_list_idx: BIGINT
-    _dlt_root_id: TEXT
+
