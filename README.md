@@ -57,7 +57,7 @@ Flow **motherduck_facts** transforms fact data data for game matches from [stora
 
 ### Transformations (SQLMesh, dlt, Python.)
 
-- Used Python with **dlt** to notmalise and SQLMesh to create staging views and finally a fact view named matches_by_size.
+- Used Python with **dlt** to normalise and SQLMesh to create staging views and finally a fact view named matches_by_size.
 
 ### Dashboard
 
