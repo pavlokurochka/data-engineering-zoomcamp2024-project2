@@ -81,3 +81,24 @@ match_date = args.match_date[:10]
 print(f'{match_date=}')
 matches = download_matches(match_date)
 merge_matches(matches)
+#%%
+from dotenv import load_dotenv
+import os
+import requests
+load_dotenv()
+contents = f"""[destination.motherduck.credentials]
+database = "coh3"  
+password = "{os.environ['MOTHERDUCK_TOKEN'].strip()}" """ 
+with open('.dlt/secrets.toml', 'w', encoding='utf-8') as f:
+    f.write(contents)
+# url = "https://github.com/pavlokurochka/data-engineering-zoomcamp2024-project2/raw/main/dlt/import_facts.py"
+# response = requests.get(url, timeout=60)
+# response.raise_for_status()
+# with open('import_facts.py', 'w', encoding='utf-8') as f:
+#     f.write(response.text) 
+# %%
+          import os
+          with open(os.path.join('sqlmesh_motherduck','config_template.yaml'), "r", encoding="utf-8") as file:
+            contents = file.read().replace('<motherduck_token>', os.environ['MOTHERDUCK_TOKEN'].strip())
+          with open(os.path.join('sqlmesh_motherduck','config.yaml'), 'w', encoding='utf-8') as file:
+            file.write(contents)
