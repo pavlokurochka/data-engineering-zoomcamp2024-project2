@@ -1,0 +1,26 @@
+# https://towardsdatascience.com/automating-data-pipelines-with-python-github-actions-c19e2ef9ca90
+name: data-pipeline-workflow
+
+on:
+  push: # run on push
+  schedule:
+    - cron: "35 0 * * *" # run every day at 12:35AM
+  workflow_dispatch:  # manual triggers
+
+jobs:
+  run-data-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo content
+        uses: actions/checkout@v4
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run data pipeline
+        env:
+          MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }} # import API key
+        run: python create_secrets.py # run data pipeline    
