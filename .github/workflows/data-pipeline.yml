@@ -20,7 +20,9 @@ jobs:
           cache: 'pip'
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Run data pipeline
+      - name: Create secrets
         env:
           MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }} # import API key
         run: python create_secrets.py # run data pipeline    
+      - name: test secrets
+        run: cat sqlmesh_motherduck/config.yaml
