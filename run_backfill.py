@@ -1,3 +1,6 @@
+""" 
+Backfill facts for github actions .github\workflows\data-pipeline.yml
+"""
 # %%
 import os
 import duckdb
