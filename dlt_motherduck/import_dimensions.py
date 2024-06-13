@@ -7,7 +7,7 @@ def import_dims():
     # yaml_file = "coh3-raw-data.yaml"
     # with open(yaml_file, encoding="utf-8") as f:
     #     data = yaml.load(f, Loader=yaml.FullLoader)
-    url = 'https://github.com/pavlokurochka/data-engineering-zoomcamp2024-project2/raw/main/dlt/coh3-raw-data.yaml'
+    url = 'https://github.com/pavlokurochka/data-engineering-zoomcamp2024-project2/raw/main/dlt_motherduck/coh3-raw-data.yaml'
     response = requests.get(url, timeout=60)
     response.raise_for_status()
     response_text = response.text
