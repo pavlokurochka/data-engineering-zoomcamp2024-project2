@@ -8,3 +8,4 @@ sqlmesh_motherduck/macros/__pycache__/*
 sqlmesh_motherduck/config.yaml
 sqlmesh_motherduck/db.db.wal
 sqlmesh_motherduck/db.db
+dlt_motherduck/.dlt/config.toml

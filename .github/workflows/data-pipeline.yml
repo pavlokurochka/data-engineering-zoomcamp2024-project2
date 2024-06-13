@@ -23,6 +23,10 @@ jobs:
       - name: Create secrets
         env:
           MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }} # import API key
-        run: python create_secrets.py # run data pipeline    
-      - name: test secrets
-        run: cat sqlmesh_motherduck/config.yaml
+        run: |
+          python create_secrets.py
+          python run_backfill.py
+          pwd
+
+      # - name: test secrets
+      #   run: cat sqlmesh_motherduck/config.yaml

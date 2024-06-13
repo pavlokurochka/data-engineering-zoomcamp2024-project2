@@ -4,7 +4,7 @@ import os
 contents = f"""[destination.motherduck.credentials]
 database = "coh3"  
 password = "{os.environ['MOTHERDUCK_TOKEN'].strip()}" """ 
-with open(os.path.join('dlt','.dlt','secrets.toml'), 'w', encoding='utf-8') as f:
+with open(os.path.join('dlt_motherduck','.dlt','secrets.toml'), 'w', encoding='utf-8') as f:
     f.write(contents)
 #%%
 with open(os.path.join('sqlmesh_motherduck','config_template.yaml'), "r", encoding="utf-8") as file:
