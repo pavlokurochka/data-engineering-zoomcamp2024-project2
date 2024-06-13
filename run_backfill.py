@@ -29,7 +29,7 @@ dates_to_run = [x for x in dates_generated if x not in dates_db]
 os.chdir('dlt_motherduck')
 # %%
 
-for match_date in dates_to_run[:4]:
+for match_date in dates_to_run:
     print(f'{match_date=}')
     matches = import_facts.download_matches(match_date)
     import_facts.merge_matches(matches)
