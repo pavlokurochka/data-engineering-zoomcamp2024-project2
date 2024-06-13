@@ -20,14 +20,19 @@ jobs:
           cache: 'pip'
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Create secrets
+      - name: Create secrets and run dlt
         env:
           MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }} # import API key
         run: |
-          pwd
-          ls -l
           python create_secrets.py
           python run_backfill.py
+      - name: SQLMesh apply
+        run: |
+          cd sqlmesh_motherduck
+          pip uninstall -y duckdb  > /dev/null
+          pip install duckdb==v0.9.2  > /dev/null
+          sqlmesh migrate
+          sqlmesh plan --auto-apply
 
       # - name: test secrets
       #   run: cat sqlmesh_motherduck/config.yaml
