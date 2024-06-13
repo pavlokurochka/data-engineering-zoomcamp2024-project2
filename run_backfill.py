@@ -29,6 +29,7 @@ dates_to_run = [x for x in dates_generated if x not in dates_db]
 os.chdir('dlt_motherduck')
 # %%
 print (f"{dates_to_run=}")
+# %%
 if len(dates_to_run)>0:
     for match_date in dates_to_run:
         print(f'{match_date=}')

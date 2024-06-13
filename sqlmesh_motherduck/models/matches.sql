@@ -1,27 +1,28 @@
 MODEL (
   name facts.matches,
-  kind INCREMENTAL_BY_UNIQUE_KEY (
-    unique_key (id)
-  ),
-  columns (
-    id BIGINT,
-    description TEXT,
-    creator_profile_id BIGINT,
-    mapname TEXT,
-    map_name TEXT,
-    expire_at_datetime TIMESTAMP,
-    platform TEXT,
-    completiontime_datetime TIMESTAMP,
-    completiontime_date DATE,
-    matchtype_id BIGINT,
-    match_size TEXT,
-    match_type TEXT,
-    ai_difficulty TEXT,
-    startgame_datetime TIMESTAMP,
-    startgame_date DATE,
-    _dlt_load_id TEXT,
-    _dlt_id TEXT
-  )
+  kind VIEW
+  -- kind INCREMENTAL_BY_UNIQUE_KEY (
+  --   unique_key (id)
+  -- ),
+  -- columns (
+  --   id BIGINT,
+  --   description TEXT,
+  --   creator_profile_id BIGINT,
+  --   mapname TEXT,
+  --   map_name TEXT,
+  --   expire_at_datetime TIMESTAMP,
+  --   platform TEXT,
+  --   completiontime_datetime TIMESTAMP,
+  --   completiontime_date DATE,
+  --   matchtype_id BIGINT,
+  --   match_size TEXT,
+  --   match_type TEXT,
+  --   ai_difficulty TEXT,
+  --   startgame_datetime TIMESTAMP,
+  --   startgame_date DATE,
+  --   _dlt_load_id TEXT,
+  --   _dlt_id TEXT
+  -- )
 );
 
 SELECT
