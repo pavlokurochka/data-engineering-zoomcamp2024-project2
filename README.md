@@ -18,7 +18,7 @@ We download **fact** data as daily JSON filles with data for multiplayer matches
 
 - **Infrastructure as code (IaC)**: Docker.
 
-- **Workflow orchestration**: [Kestra](https://kestra.io/). (Update: I also added a GitHub actions [workflow](README.md).)
+- **Workflow orchestration**: [Kestra](https://kestra.io/). (Update: I also added a GitHub actions [workflow](GitHub_Actions.md).)
 
 - **Data Warehouse**: [MotherDuck](https://app.motherduck.com/)
 

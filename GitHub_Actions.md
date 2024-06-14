@@ -1,6 +1,6 @@
 # GithHub Actions configuration
 
-GiotHub Actions is an alternative orchestration. It is configured to run daily on GiotHub codespace. It runs for less then 2 min per day and easily fits into the free use codespaces limit.
+GiotHub Actions is a alternative free orchestration. It is configured to run daily on GiotHub codespace. It runs for less then 2 min per day and easily fits in the free-use codespaces limit.
 
 ## Add Repo Secrets
 
