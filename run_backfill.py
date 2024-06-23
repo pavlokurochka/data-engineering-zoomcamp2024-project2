@@ -1,5 +1,8 @@
 """ 
 Backfill facts for github actions .github\workflows\data-pipeline.yml
+
+    export $(grep -v '^#' .env | xargs)
+
 """
 # %%
 import os
