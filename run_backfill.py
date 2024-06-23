@@ -20,10 +20,12 @@ motherduck_token = os.environ["MOTHERDUCK_TOKEN"]
 # %%
 con = duckdb.connect(f"md:coh3?motherduck_token={motherduck_token}")
 # %%
+df = con.sql("""SELECT distinct startgame_date  
+            from coh3.facts.matches order by 1""").df()
+print(df)
 dates_db = [
     str(x)[:10]
-    for x in con.sql("""SELECT distinct startgame_date  
-            from coh3.facts.matches order by 1""").df()["startgame_date"]
+    for x in df["startgame_date"]
 ]
 # %%
 dates_generated = [
