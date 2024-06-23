@@ -22,7 +22,7 @@ con = duckdb.connect(f"md:coh3?motherduck_token={motherduck_token}")
 # %%
 results = con.sql("""SELECT distinct startgame_date::varchar   startgame_date
             from coh3.facts.matches order by 1""")
-print(results)
+# print(results)
 df = results.df()
 # print(df)
 dates_db = [
