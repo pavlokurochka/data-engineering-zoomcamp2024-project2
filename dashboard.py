@@ -10,7 +10,11 @@ from dotenv import load_dotenv
 # %%
 # load_dotenv(os.path.join('..','.env'))
 load_dotenv()
-motherduck_token = os.environ["MOTHERDUCK_TOKEN"]
+if "MOTHERDUCK_TOKEN" in os.environ:
+	motherduck_token = os.environ["MOTHERDUCK_TOKEN"]
+# %%
+if "MOTHERDUCK_TOKEN" in st.secrets:
+	motherduck_token = st.secrets["MOTHERDUCK_TOKEN"]
 # %%
 con = duckdb.connect(f"md:coh3?motherduck_token={motherduck_token}")
 
