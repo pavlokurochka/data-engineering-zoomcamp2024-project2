@@ -50,7 +50,7 @@ st.markdown("""
 	And while coh3stats guys do store and [expose raw data](https://coh3stats.com/other/open-data), 
 	I got the impression that the format is not very data analyst friendly.
 			
-	Check out the readme for the GitHub repository. Data is hosted and updated using only free tier resources. This pipeline runs daily on GitHub Actions and stores data in [MotherDuck](https://app.motherduck.com/).
+	Check out the [readme](https://github.com/pavlokurochka/data-engineering-zoomcamp2024-project2/blob/main/README.md) for the GitHub repository. Data is hosted and updated using only free tier resources. This pipeline runs daily on GitHub Actions and stores data in [MotherDuck](https://app.motherduck.com/).
 	This app retreives the pivot of match size data with DuckDB to display results in the table and the graph below.			
 
 """)
