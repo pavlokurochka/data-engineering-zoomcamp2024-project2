@@ -14,6 +14,7 @@ load_dotenv()
 if "MOTHERDUCK_TOKEN" in os.environ:
 	motherduck_token = os.environ["MOTHERDUCK_TOKEN"]
 # %%
+#  for hosting on https://coh3matches.streamlit.app/ - add secret to the app
 if not motherduck_token:
 	if "MOTHERDUCK_TOKEN" in st.secrets:
 		motherduck_token = st.secrets["MOTHERDUCK_TOKEN"]
@@ -49,8 +50,8 @@ st.markdown("""
 	And while coh3stats guys do store and [expose raw data](https://coh3stats.com/other/open-data), 
 	I got the impression that the format is not very data analyst friendly.
 			
-	Check out the readme for the GitHub repository. This pipeline runs daily on GitHub Actions and stores data in [MotherDuck](https://app.motherduck.com/).
-	This app retreives the pivot of match size data with DuckDB to display results in the table and the graph.			
+	Check out the readme for the GitHub repository. Data is hosted and updated using only free tier resources. This pipeline runs daily on GitHub Actions and stores data in [MotherDuck](https://app.motherduck.com/).
+	This app retreives the pivot of match size data with DuckDB to display results in the table and the graph below.			
 
 """)
 st.caption("_Count of Matches by Size_")

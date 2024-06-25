@@ -123,7 +123,9 @@ Go to **Flows**>**motherduck_facts**>**Triggers** and click on **Backfill execut
 
 ### Dashboard
 
-Open a new terminal in VS Code. Build and run a Docker container for the Sreamlit dashboard.
+Dashboard app runs on public [streamlit hosting](https://coh3matches.streamlit.app/)
+
+To reproduce locally open a new terminal in VS Code. Build and run a Docker container for the Sreamlit dashboard.
 
 ```bash
 docker build -t streamlit .
