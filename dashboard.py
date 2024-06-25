@@ -9,12 +9,14 @@ from dotenv import load_dotenv
 
 # %%
 # load_dotenv(os.path.join('..','.env'))
+motherduck_token = None
 load_dotenv()
 if "MOTHERDUCK_TOKEN" in os.environ:
 	motherduck_token = os.environ["MOTHERDUCK_TOKEN"]
 # %%
-if "MOTHERDUCK_TOKEN" in st.secrets:
-	motherduck_token = st.secrets["MOTHERDUCK_TOKEN"]
+if not motherduck_token:
+	if "MOTHERDUCK_TOKEN" in st.secrets:
+		motherduck_token = st.secrets["MOTHERDUCK_TOKEN"]
 # %%
 con = duckdb.connect(f"md:coh3?motherduck_token={motherduck_token}")
 
@@ -35,9 +37,24 @@ st.set_page_config(
 	page_title="COH3 Data",
 	page_icon="🪖",
 )
-st.markdown("_Count of Matches by Size_")
-st.dataframe(df)
+st.header('Dashboard for Lightweight Data Pipeline for Company of Heroes 3 Matches')
 
+st.markdown(""" 
+	This is the result of the data pipeline of match statistics 
+	from my current favorite game [Company of  Heroes 3](https://community.companyofheroes.com/coh-franchise-home/company-of-heroes-3).
+
+
+	It turns out the enthusiasts behind [coh3stats](https://coh3stats.com/stats/games) already did the best dashboards I could imagine. 
+	However, I thought that there could always be more queries to be run to explore data from some other angle. 
+	And while coh3stats guys do store and [expose raw data](https://coh3stats.com/other/open-data), 
+	I got the impression that the format is not very data analyst friendly.
+			
+	Check out the readme for the GitHub repository. This pipeline runs daily on GitHub Actions and stores data in [MotherDuck](https://app.motherduck.com/).
+	This app retreives the pivot of match size data with DuckDB to display results in the table and the graph.			
+
+""")
+st.caption("_Count of Matches by Size_")
+st.dataframe(df)
 st.line_chart(df)
 # %%
 # set MOTHERDUCK_TOKEN=<tocken>
