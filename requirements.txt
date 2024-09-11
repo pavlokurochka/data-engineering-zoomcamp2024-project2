@@ -1,6 +1,6 @@
 # altair
 pandas
 streamlit
-duckdb
+duckdb=1.0.0
 python-dotenv
 dlt
