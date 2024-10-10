@@ -1292,4 +1292,5 @@ maps:  [ twin_beach_2p_mkii: {
     name: "Alam el Halfa",
     url: "/halfa_8p/halfa_8p.webp",
   },
+  # more maps: https://github.com/cohstats/coh3-stats/blob/master/src/coh3/coh3-data.ts
   ]
