@@ -44,15 +44,21 @@ def get_yesterday() -> str:
 def download_matches(date_in: str) -> list:
     ts_in = get_midnight_utc_timestamp(date_in)
     url = f"https://storage.coh3stats.com/matches/matches-{ts_in}.json"
-    response = requests.get(url, timeout=60)
-    response.raise_for_status()
-    response_json = response.json()
-    ts = int(response_json["timeStamp"])
-    dl_ts = datetime.datetime.fromtimestamp(ts, tz=datetime.timezone.utc).strftime(
-        "%Y-%m-%d %H:%M:%S"
-    )
-    matches = response_json["matches"]
-    print(f"Downloaded {len(matches)} matches for {dl_ts}")
+    matches = None
+    try:
+        response = requests.get(url, timeout=60)
+        response.raise_for_status()
+
+        response_json = response.json()
+        ts = int(response_json["timeStamp"])
+        dl_ts = datetime.datetime.fromtimestamp(ts, tz=datetime.timezone.utc).strftime(
+            "%Y-%m-%d %H:%M:%S"
+        )
+        matches = response_json["matches"]
+        print(f"Downloaded {len(matches)} matches for {dl_ts}")
+    except requests.exceptions.HTTPError:
+        print(f"ERROR: matches for {date_in} are not found at {url}")
+        
     return matches
 
 

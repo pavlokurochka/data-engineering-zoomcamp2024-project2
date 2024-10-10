@@ -11,7 +11,7 @@ from dlt_motherduck import import_facts
 import pandas as pd
 
 # %%
-START_DATE = "2023-05-15"
+START_DATE = "2023-07-01"
 TIME_DELTA = "1D"
 # %%
 end_date = import_facts.get_yesterday()
@@ -44,6 +44,7 @@ if len(dates_to_run)>0:
     for match_date in dates_to_run:
         print(f'{match_date=}')
         matches = import_facts.download_matches(match_date)
-        import_facts.merge_matches(matches)
+        if matches:
+            import_facts.merge_matches(matches)
 
 # %%
