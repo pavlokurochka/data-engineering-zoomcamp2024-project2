@@ -11,7 +11,7 @@ from dlt_motherduck import import_facts
 import pandas as pd
 
 # %%
-START_DATE = "2023-05-11"
+START_DATE = "2023-05-15"
 TIME_DELTA = "1D"
 # %%
 end_date = import_facts.get_yesterday()
