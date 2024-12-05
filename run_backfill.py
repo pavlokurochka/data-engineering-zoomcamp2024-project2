@@ -24,6 +24,7 @@ results = con.sql("""SELECT distinct startgame_date::varchar   startgame_date
             from coh3.facts.matches order by 1""")
 # print(results)
 df = results.df()
+con.close()
 # print(df)
 dates_db = [
     str(x)[:10]
