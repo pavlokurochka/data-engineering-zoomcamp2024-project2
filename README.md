@@ -1,4 +1,4 @@
-# Lightweight Data Pipeline for Company of  Heroes 3 Matches
+# Lightweight Data Pipeline for Company of Heroes 3 Matches
 
 ### Introduction
 
