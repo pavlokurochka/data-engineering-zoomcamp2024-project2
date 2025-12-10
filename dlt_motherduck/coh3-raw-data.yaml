@@ -1292,7 +1292,7 @@ maps:  [ twin_beach_2p_mkii: {
     name: "Alam el Halfa",
     url: "/halfa_8p/halfa_8p.webp",
   },
-    /* ------------------------- 1.9.0 Maps ---------------------------- */
+    # /* ------------------------- 1.9.0 Maps ---------------------------- */
   santuario_4p: {
     name: "Santuario",
     url: "/santuario_4p/santuario_4p.webp",
@@ -1321,12 +1321,12 @@ maps:  [ twin_beach_2p_mkii: {
     name: "Djebel Pass",
     url: "/djebel_2p/djebel_2p.webp",
   },
-  /* ------------------------- 2.0.5 Maps ---------------------------- */
+  # /* ------------------------- 2.0.5 Maps ---------------------------- */
   mignano_6p: {
     name: "Mignano Summit",
     url: "/mignano_6p/mignano_6p.webp",
   },
-  /* ------------------------- 2.1.0 Maps ---------------------------- */
+  # /* ------------------------- 2.1.0 Maps ---------------------------- */
   red_ball_express_8p: {
     name: "Red Ball Express",
     url: "/red_ball_express_8p/red_ball_express_8p.webp",
@@ -1347,7 +1347,7 @@ maps:  [ twin_beach_2p_mkii: {
     name: "Tuscan Vineyard",
     url: "/tuscan_vineyard_2p/tuscan_vineyard_2p.webp",
   },
-  /* ------------------------- 2.2.0 Maps ---------------------------- */
+  # /* ------------------------- 2.2.0 Maps ---------------------------- */
   bologna_2p: {
     name: "Bologna",
     url: "/bologna_2p/bologna_2p.webp",
