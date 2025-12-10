@@ -1292,5 +1292,89 @@ maps:  [ twin_beach_2p_mkii: {
     name: "Alam el Halfa",
     url: "/halfa_8p/halfa_8p.webp",
   },
+    /* ------------------------- 1.9.0 Maps ---------------------------- */
+  santuario_4p: {
+    name: "Santuario",
+    url: "/santuario_4p/santuario_4p.webp",
+  },
+  rapido_river_8p: {
+    name: "Rapido River Crossing",
+    url: "/rapido_river_8p/rapido_river_8p.webp",
+  },
+  angoville_farms_2p: {
+    name: "Angoville",
+    url: "/angoville_farms_2p/angoville_farms_2p.webp",
+  },
+  langres_2p: {
+    name: "Langres",
+    url: "/langres_2p/langres_2p.webp",
+  },
+  crossing_in_the_woods_2p: {
+    name: "Crossing in the Woods",
+    url: "/crossing_in_the_woods_2p/crossing_in_the_woods_2p.webp",
+  },
+  crossing_in_the_woods_4p: {
+    name: "Crossing in the Woods",
+    url: "/crossing_in_the_woods_4p/crossing_in_the_woods_4p.webp",
+  },
+  djebel_2p: {
+    name: "Djebel Pass",
+    url: "/djebel_2p/djebel_2p.webp",
+  },
+  /* ------------------------- 2.0.5 Maps ---------------------------- */
+  mignano_6p: {
+    name: "Mignano Summit",
+    url: "/mignano_6p/mignano_6p.webp",
+  },
+  /* ------------------------- 2.1.0 Maps ---------------------------- */
+  red_ball_express_8p: {
+    name: "Red Ball Express",
+    url: "/red_ball_express_8p/red_ball_express_8p.webp",
+  },
+  gabes_gap_6p: {
+    name: "Gabès Gap",
+    url: "/gabes_gap_6p/gabes_gap_6p.webp",
+  },
+  alamein_4p: {
+    name: "Alamein",
+    url: "/alamein_4p/alamein_4p.webp",
+  },
+  lorraine_4p: {
+    name: "Lorraine",
+    url: "/lorraine_4p/lorraine_4p.webp",
+  },
+  tuscan_vineyard_2p: {
+    name: "Tuscan Vineyard",
+    url: "/tuscan_vineyard_2p/tuscan_vineyard_2p.webp",
+  },
+  /* ------------------------- 2.2.0 Maps ---------------------------- */
+  bologna_2p: {
+    name: "Bologna",
+    url: "/bologna_2p/bologna_2p.webp",
+  },
+  wadi_darnah_4p: {
+    name: "Wadi Darnah",
+    url: "/wadi_darnah_4p/wadi_darnah_4p.webp",
+  },
+  oliveto_citra_8p: {
+    name: "Oliveto Citra",
+    url: "/oliveto_citra_8p/oliveto_citra_8p.webp",
+  },
+  powderkeg_8p: {
+    name: "Powderkeg",
+    url: "/powderkeg_8p/powderkeg_8p.webp",
+  },
+  semois_4p: {
+    name: "Semois",
+    url: "/semois_4p/semois_4p.webp",
+  },
+  djebel_4p: {
+    name: "Djebel Pass",
+    url: "/djebel_4p/djebel_4p.webp",
+  },
+  primosole_6p: {
+    name: "Road to Primosole",
+    url: "/primosole_6p/primosole_6p.webp",
+  },
   # more maps: https://github.com/cohstats/coh3-stats/blob/master/src/coh3/coh3-data.ts
   ]
