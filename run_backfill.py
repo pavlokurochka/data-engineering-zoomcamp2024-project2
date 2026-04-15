@@ -11,6 +11,12 @@ from dlt_motherduck import import_facts
 import pandas as pd
 
 # %%
+# from dotenv import load_dotenv
+
+# # Load variables from .env file
+# load_dotenv(".env")
+# %%
+# %%
 START_DATE = "2023-07-01"
 TIME_DELTA = "1D"
 # %%

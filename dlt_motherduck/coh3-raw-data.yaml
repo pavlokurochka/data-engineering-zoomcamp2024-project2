@@ -811,8 +811,8 @@ maps: [
       {
         name: "Oasis Depot",
         url: "/icons/maps/oasis_depot_8p_mm_handmade.webp",
-      },
-      # /* ------------------------- 1.7.0 Maps ---------------------------- */,
+      }
+      # /* ------------------------- 1.7.0 Maps ---------------------------- */,,
     black_gold_8p:
       { name: "Black Gold", url: "/black_gold_8p/black_gold_8p.webp" },
     # /* ------------------------- 1.8.0 Maps ---------------------------- */
@@ -821,8 +821,8 @@ maps: [
     longstop_hill_6p:
       { name: "Longstop Hill", url: "/longstop_hill_6p/longstop_hill_6p.webp" },
     halfa_8p:
-      { name: "Alam el Halfa", url: "/halfa_8p/halfa_8p.webp" },
-      # /* ------------------------- 1.9.0 Maps ---------------------------- */
+      { name: "Alam el Halfa", url: "/halfa_8p/halfa_8p.webp" }
+      # /* ------------------------- 1.9.0 Maps ---------------------------- */,
     santuario_4p: { name: "Santuario", url: "/santuario_4p/santuario_4p.webp" },
     rapido_river_8p:
       {
@@ -870,5 +870,13 @@ maps: [
     djebel_4p: { name: "Djebel Pass", url: "/djebel_4p/djebel_4p.webp" },
     primosole_6p:
       { name: "Road to Primosole", url: "/primosole_6p/primosole_6p.webp" },
-    # more maps: https://github.com/cohstats/coh3-stats/blob/master/src/coh3/coh3-data.ts
+      # /* ------------------------- 2.3.0 Maps ---------------------------- */
+    egletons_2p: { name: "Égletons", url: "/egletons_2p/egletons_2p.webp" },
+    pisa_centrale_4p:
+      { name: "Pisa Centrale", url: "/pisa_centrale_4p/pisa_centrale_4p.webp" },
+    sedjenane_6p:
+      { name: "Sedjenane Marshes", url: "/sedjenane_6p/sedjenane_6p.webp" },
+    castello_8p:
+      { name: "Castello della Nebbia", url: "/castello_8p/castello_8p.webp" }
+      # more maps: https://github.com/cohstats/coh3-stats/blob/master/src/coh3/coh3-data.ts,
   ]
