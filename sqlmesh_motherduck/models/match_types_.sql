@@ -1,7 +1,4 @@
-MODEL (
-  name dimensions.match_types,
-  kind FULL
-);
+MODEL (name dimensions.match_types, kind FULL);
 
 SELECT
   id,
@@ -11,4 +8,5 @@ SELECT
   SPLIT_PART(name, '_', 3) AS ai_difficulty,
   "_dlt_id",
   localized_name
-FROM coh3.dim.match_types
+FROM
+  coh3.dim.match_types

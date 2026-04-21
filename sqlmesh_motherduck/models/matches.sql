@@ -31,20 +31,19 @@ SELECT
   creator_profile_id,
   mapname,
   COALESCE(mp.name, mapname) AS map_name,
-  EPOCH_MS(expire_at___seconds * 1000)::DATETIME AS expire_at_datetime,
+  EPOCH_MS(expire_at___seconds*1000)::DATETIME AS expire_at_datetime,
   platform,
-  EPOCH_MS(completiontime * 1000)::DATETIME AS completiontime_datetime,
-  EPOCH_MS(completiontime * 1000)::DATE AS completiontime_date,
+  EPOCH_MS(completiontime*1000)::DATETIME AS completiontime_datetime,
+  EPOCH_MS(completiontime*1000)::DATE AS completiontime_date,
   mm.matchtype_id,
   mt.match_size,
   mt.match_type,
   mt.ai_difficulty,
-  EPOCH_MS(startgametime * 1000)::DATETIME AS startgame_datetime,
-  EPOCH_MS(startgametime * 1000)::DATE AS startgame_date,
+  EPOCH_MS(startgametime*1000)::DATETIME AS startgame_datetime,
+  EPOCH_MS(startgametime*1000)::DATE AS startgame_date,
   mm."_dlt_load_id",
   mm."_dlt_id"
-FROM coh3.fact.matches AS mm
-JOIN coh3.dimensions.match_types AS mt
-  ON mm.matchtype_id = mt.id
-LEFT JOIN coh3.dim.maps AS mp
-  ON mm.mapname = mp.id
+FROM
+  coh3.fact.matches AS mm
+  JOIN coh3.dimensions.match_types AS mt ON mm.matchtype_id=mt.id
+  LEFT JOIN coh3.dim.maps AS mp ON mm.mapname=mp.id
