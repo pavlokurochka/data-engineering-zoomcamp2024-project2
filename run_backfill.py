@@ -26,8 +26,8 @@ motherduck_token = os.environ["MOTHERDUCK_TOKEN"]
 # %%
 con = duckdb.connect(f"md:coh3?motherduck_token={motherduck_token}")
 # %%
-results = con.sql("""SELECT distinct startgame_date::varchar   startgame_date
-            from coh3.facts.matches order by 1""")
+results = con.sql(""" SELECT DISTINCT EPOCH_MS(startgametime * 1000)::DATE AS startgame_date
+            FROM coh3.fact.matches order by 1""")
 # print(results)
 df = results.df()
 con.close()
