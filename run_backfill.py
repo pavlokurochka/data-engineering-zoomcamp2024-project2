@@ -9,7 +9,7 @@ import os
 import duckdb
 from dlt_motherduck import import_facts
 import pandas as pd
-
+import subprocess
 # %%
 # from dotenv import load_dotenv
 
@@ -31,6 +31,7 @@ results = con.sql(""" SELECT DISTINCT EPOCH_MS(startgametime * 1000)::DATE AS st
 # print(results)
 df = results.df()
 con.close()
+del con
 # print(df)
 dates_db = [
     str(x)[:10]
@@ -47,11 +48,33 @@ os.chdir('dlt_motherduck')
 # %%
 print (f"{dates_to_run=}")
 # %%
-if len(dates_to_run)>0:
-    for match_date in dates_to_run:
-        print(f'{match_date=}')
-        matches = import_facts.download_matches(match_date)
-        if matches:
-            import_facts.merge_matches(matches)
+# if len(dates_to_run)>0:
+#     for match_date in dates_to_run:
+#         print(f'{match_date=}')
+#         matches = import_facts.download_matches(match_date)
+#         if matches:
+#             import_facts.merge_matches(matches)
 
-# %%
+# %% Generate the .sh bash script
+sh_filename = "run_backfill.sh"
+
+with open(sh_filename, "w") as f:
+    f.write("#!/bin/bash\n")
+    f.write("# Automated backfill execution script\n\n")
+    for match_date in dates_to_run:
+        f.write(f"python import_facts.py --match_date '{match_date}'\n")
+
+print(f"\n[SUCCESS] Created {sh_filename} with {len(dates_to_run)} commands.")
+
+# %% Make the script executable and run it
+try:
+    print("Making the script executable...")
+    subprocess.run(["chmod", "+x", sh_filename], check=True)
+    
+    print("Running the backfill script...")
+    # Use text=True to stream the console output in real-time
+    subprocess.run([f"./{sh_filename}"], check=True, text=True)
+    print("[SUCCESS] Bash script execution completed.")
+    
+except subprocess.CalledProcessError as e:
+    print(f"[ERROR] Bash command failed with exit code {e.returncode}")

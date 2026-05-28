@@ -10,3 +10,4 @@ sqlmesh_motherduck/db.db.wal
 sqlmesh_motherduck/db.db
 dlt_motherduck/.dlt/config.toml
 .vscode/settings.json
+dlt_motherduck/run_backfill.sh

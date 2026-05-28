@@ -70,6 +70,7 @@ def merge_matches(matches_in: list):
     info = pipeline.run(
         matches_in, table_name="matches", write_disposition="merge", primary_key="id"
     )
+    del pipeline
     print(info)
 
 
@@ -87,7 +88,10 @@ def main():
     match_date = args.match_date[:10]
     print(f'{match_date=}')
     matches = download_matches(match_date)
-    merge_matches(matches)
+    if matches:
+        merge_matches(matches)
+    else:
+        print(f"No matches found for {match_date}")
 #%%
 if __name__ == '__main__':
     main()
