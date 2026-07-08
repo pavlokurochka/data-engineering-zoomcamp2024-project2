@@ -1,13 +1,13 @@
-"""Create files with secretsfor github actions .github\workflows\data-pipeline.yml"""
+# """Create files with secretsfor github actions .github\workflows\data-pipeline.yml"""
 
 # %%
 import os
 
 # %%
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-# # Load variables from .env file
-# load_dotenv(".env")
+# Load variables from .env file
+load_dotenv(".env")
 # %%
 contents = f"""[destination.motherduck.credentials]
 database = "coh3"  

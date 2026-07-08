@@ -1,9 +1,9 @@
-""" 
-Backfill facts for github actions .github\workflows\data-pipeline.yml
+# """ 
+# Backfill facts for github actions .github\workflows\data-pipeline.yml
 
-    export $(grep -v '^#' .env | xargs)
+#     export $(grep -v '^#' .env | xargs)
 
-"""
+# """
 # %%
 import os
 import duckdb
@@ -11,10 +11,10 @@ from dlt_motherduck import import_facts
 import pandas as pd
 import subprocess
 # %%
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-# # Load variables from .env file
-# load_dotenv(".env")
+# Load variables from .env file
+load_dotenv(".env")
 # %%
 # %%
 START_DATE = "2023-07-01"
