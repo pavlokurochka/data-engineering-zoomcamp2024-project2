@@ -4,3 +4,4 @@ streamlit
 duckdb==1.5.1
 python-dotenv
 dlt
+sqlmesh

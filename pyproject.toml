@@ -9,5 +9,6 @@ dependencies = [
     "duckdb==1.5.1",
     "pandas>=3.0.3",
     "python-dotenv>=1.2.2",
+    "sqlmesh>=0.228.4",
     "streamlit>=1.59.1",
 ]
