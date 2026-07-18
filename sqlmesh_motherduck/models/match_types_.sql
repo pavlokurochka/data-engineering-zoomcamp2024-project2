@@ -1,5 +1,6 @@
+/* sql-formatter-disable */
 MODEL (name dimensions.match_types, kind FULL);
-
+/* sql-formatter-enable */
 SELECT
   id,
   name,

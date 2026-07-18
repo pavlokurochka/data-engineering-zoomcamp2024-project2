@@ -1,5 +1,6 @@
+/* sql-formatter-disable */
 MODEL (name facts.matches_by_size, kind FULL);
-
+/* sql-formatter-enable */
 -- WITH by_date AS (
 SELECT
 	match_size,
@@ -8,8 +9,8 @@ SELECT
 FROM
 	coh3.facts.matches mm
 WHERE
-	len(ai_difficulty)=0
-	AND description='AUTOMATCH'
+	len(ai_difficulty) = 0
+	AND description = 'AUTOMATCH'
 GROUP BY ALL
 	-- 	)
 	-- 	PIVOT by_date ON
@@ -17,5 +18,3 @@ GROUP BY ALL
 	-- 	USING sum(count_)
 	-- ORDER BY
 	-- startgame_date
-
-	
